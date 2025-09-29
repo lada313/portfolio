@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Жилокова Лада — Portfolio · Light + Blue</title>
-  <meta name="description" content="Портфолио Жилоковой Лады: организация мероприятий, PR, digital‑проекты, лендинги и публикации в СМИ." />
+  <title>Жилокова Лада — Portfolio · Light + Blue (Final)</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -22,11 +21,12 @@
       --muted:#5a6b85;      /* подписи */
       --card:#ffffff;       /* карточки */
       --chip:#e9f2ff;       /* чипы/бейджи */
-      --ok:#8b5cf6; /* фиолетовый акцент вместо розового */;
+      --ok:#8b5cf6;         /* фиолетовый акцент (не жёлт/зелён/розовый) */
+      --line:rgba(0,0,0,.08);
       --shadow:0 10px 30px rgba(13,27,42,.08);
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
+    html,body{height:100%; overflow-x:hidden}
     body{margin:0;font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:var(--bg);color:var(--text)}
     a{color:var(--accent)}
     .container{max-width:1140px;margin:0 auto;padding:0 20px;width:100%}
@@ -68,11 +68,31 @@
     .tag{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:var(--chip);color:var(--accent);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.7px}
     .hero h1{margin:12px 0 10px;font-size:40px;line-height:1.1}
     .hero p{margin:0 0 22px;color:var(--muted);max-width:720px}
-    .portrait{aspect-ratio:1/1;border-radius:20px;overflow:hidden;position:relative;background:radial-gradient(120% 80% at 10% 10%, #eaf2ff, #dfeaff 60%, #d6e3ff 100%);box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center}
-    .portrait img{width:100%;height:100%;object-fit:cover;display:block}
-    .portrait::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(31,111,235,.08) 0 2px,transparent 2px 12px)}
-    .portrait .badge{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.8);border:1px solid var(--line);backdrop-filter:blur(6px);color:var(--accent);padding:6px 10px;border-radius:999px;font-size:12px;letter-spacing:.6px;text-transform:uppercase}
-    .placeholder-graphic{width:70%;max-width:360px;aspect-ratio:1/1;border:1px dashed rgba(31,111,235,.35);display:grid;place-items:center;color:var(--accent);font-weight:700;letter-spacing:.5px;border-radius:16px}
+
+    /* HERO portrait with stripes & frame behind photo */
+    .portrait{
+      position: relative;
+      aspect-ratio: 1/1;
+      border-radius: 20px;
+      overflow: hidden;
+      background: radial-gradient(120% 80% at 10% 10%, #eaf2ff, #dfeaff 60%, #d6e3ff 100%);
+      box-shadow: var(--shadow);
+      display:flex;align-items:center;justify-content:center;
+    }
+    .portrait img{
+      position: relative; z-index: 1; /* фото над полосками/рамкой */
+      width:100%; height:100%; object-fit:cover; display:block;
+    }
+    .portrait::before{ /* диагональные полоски под фото */
+      content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+      background:repeating-linear-gradient(135deg, rgba(31,111,235,.10) 0 2px, transparent 2px 12px);
+    }
+    .portrait::after{ /* тонкая рамка под фото */
+      content:""; position:absolute; inset:0; z-index:0; pointer-events:none; border-radius:20px;
+      box-shadow: inset 0 0 0 1.5px rgba(31,111,235,.25);
+    }
+    .portrait .badge{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.85);border:1px solid var(--line);backdrop-filter:blur(6px);color:var(--accent);padding:6px 10px;border-radius:999px;font-size:12px;letter-spacing:.6px;text-transform:uppercase;z-index:2}
+    .placeholder-graphic{position:relative;z-index:1;width:70%;max-width:360px;aspect-ratio:1/1;border:1px dashed rgba(31,111,235,.35);display:grid;place-items:center;color:var(--accent);font-weight:700;letter-spacing:.5px;border-radius:16px}
 
     section{padding:48px 0}
     h2{font-size:28px;margin:0 0 18px;position:relative}
@@ -121,10 +141,10 @@
       .stats{grid-template-columns:repeat(2,1fr)}
     }
     @media (max-width: 640px){
-      /* === Carousels: fix slide shift on 2-3 slides === */
+      /* === Carousels: keep centered, avoid overflow === */
       .swiper{min-width:0;width:100%;overflow:visible}
-      .swiper-wrapper{padding:0}
-      .swiper-slide{width:92vw !important;height:auto !important;aspect-ratio:1/1}
+      .swiper-wrapper{padding:0 0 12px}
+      .swiper-slide{width:90vw !important;height:auto !important;aspect-ratio:1/1}
       .swiper-slide .inner{padding:16px 12px 60px}
       .swiper-slide h4,
       .swiper-slide p,
@@ -134,7 +154,6 @@
       .hero h1{font-size:32px}
       .stats{grid-template-columns:1fr}
       .ref-block{gap:1.5rem}
-      .swiper{min-width:0;width:100%}
 
       /* === Skills: single column on mobile, prevent overflow === */
       #skills .stats{grid-template-columns:1fr !important}
@@ -158,6 +177,8 @@
     .lightbox .close{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.9);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:8px 10px;font-weight:700}
     .lightbox .zoom-tip{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:#e4eeff;font-size:12px}
 
+    /* когда картинка подгрузилась — скрыть плейсхолдер */
+    .portrait.has-image .placeholder-graphic{display:none}
   </style>
 </head>
 <body>
@@ -193,12 +214,10 @@
           <a class="btn-ghost" href="#contacts">Связаться</a>
         </div>
       </div>
-      <div class="portrait" aria-hidden="true">
-        <!-- HERO IMAGE: вставьте свою картинку ниже (рекомендуется ~1200x1200). Пример: -->
-        <img src="assets/1721322353038.JPEG" alt="Лада Жилокова" loading="lazy"/>
+      <div class="portrait">
+        <img src="assets/1721322353038.JPEG" alt="Лада Жилокова" loading="lazy" onload="this.closest('.portrait').classList.add('has-image')"/>
         <span class="badge">hero</span>
         <div class="placeholder-graphic">Визуал</div>
-      </div>
       </div>
     </div>
   </section>
@@ -232,7 +251,7 @@
         </div>
         <div class="swiper visual-swiper">
           <div class="swiper-wrapper">
-            <!-- CAROUSEL IMAGES: замените URL в background-image на свои картинки. Для добавления новой карточки — продублируйте блок `.swiper-slide` ниже. -->
+            <!-- Замените URL в background-image на свои изображения -->
             <div class="swiper-slide slide-bg" style="background-image:url('img/visual-1.jpg')">
               <div class="inner">
                 <h4>Промо‑баннер</h4>
@@ -264,7 +283,6 @@
         </div>
         <div class="swiper media-swiper">
           <div class="swiper-wrapper">
-            <!-- CAROUSEL IMAGES (Media): замените URL в background-image. Можно добавлять/удалять `.swiper-slide`. -->
             <div class="swiper-slide slide-bg" style="background-image:url('img/media-1.jpg')"><div class="inner"><h4>Статья</h4><p>Материал в отраслевом издании о запуске линии средств.</p><a class="cta" href="#" target="_blank">читать</a></div></div>
             <div class="swiper-slide slide-bg" style="background-image:url('img/media-2.jpg')"><div class="inner"><h4>Интервью</h4><p>Комментарий эксперта бренда для тематического журнала.</p><a class="cta" href="#" target="_blank">читать</a></div></div>
             <div class="swiper-slide slide-bg" style="background-image:url('img/media-3.jpg')"><div class="inner"><h4>PR‑партнёрство</h4><p>Совместный спецпроект с лидером мнений.</p><a class="cta" href="#" target="_blank">смотреть</a></div></div>
@@ -286,7 +304,6 @@
         </div>
         <div class="swiper events-swiper">
           <div class="swiper-wrapper">
-            <!-- CAROUSEL IMAGES (Events): замените URL в background-image. Можно добавлять/удалять `.swiper-slide`. -->
             <div class="swiper-slide slide-bg" style="background-image:url('img/event-1.jpg')"><div class="inner"><h4>Встреча</h4><p>Конференция с партнёрами из США: программа, логистика, продакшн.</p><a class="cta" href="#" target="_blank">смотреть</a></div></div>
             <div class="swiper-slide slide-bg" style="background-image:url('img/event-2.jpg')"><div class="inner"><h4>Бьюти‑завтрак</h4><p>Камерное мероприятие для лидов и экспертов.</p><a class="cta" href="#" target="_blank">смотреть</a></div></div>
             <div class="swiper-slide slide-bg" style="background-image:url('img/event-3.jpg')"><div class="inner"><h4>INTERCHARM</h4><p>Участие с собственным стендом и программой мастер‑классов.</p><a class="cta" href="#" target="_blank">смотреть</a></div></div>
@@ -308,7 +325,6 @@
         </div>
         <div class="swiper skin-swiper">
           <div class="swiper-wrapper">
-            <!-- CAROUSEL IMAGES (SKINCOUTURE): замените URL в background-image. Можно добавлять/удалять `.swiper-slide`. -->
             <div class="swiper-slide slide-bg" style="background-image:url('img/skin-1.jpg')"><div class="inner"><h4>Стенд</h4><p>Визуальная айдентика и оформление.</p><a class="cta" href="#" target="_blank">смотреть</a></div></div>
             <div class="swiper-slide slide-bg" style="background-image:url('img/skin-2.jpg')"><div class="inner"><h4>Материалы</h4><p>Каталоги, POS и промо‑наборы для партнёров.</p><a class="cta" href="#" target="_blank">смотреть</a></div></div>
             <div class="swiper-slide slide-bg" style="background-image:url('img/skin-3.jpg')"><div class="inner"><h4>Мерч</h4><p>Оформление полок, мерч, сувениры.</p><a class="cta" href="#" target="_blank">смотреть</a></div></div>
@@ -387,47 +403,11 @@
   makeSwiper('.media-swiper');
   makeSwiper('.events-swiper');
   makeSwiper('.skin-swiper');
-
-  // Lightbox
-  const lb = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightbox-img');
-  if(lb && lbImg){
-    const lbClose = lb.querySelector('.close');
-    function getBgURL(el){
-      const s = getComputedStyle(el);
-      const m = s.backgroundImage.match(/url\(["']?(.*?)["']?\)/);
-      return m ? m[1] : null;
-    }
-    document.querySelectorAll('.swiper-slide.slide-bg').forEach(slide => {
-      slide.addEventListener('click', (e) => {
-        if (e.target && (e.target.closest('a') || e.target.tagName === 'A')) return;
-        const url = getBgURL(slide);
-        if(!url) return;
-        lbImg.src = url;
-        lb.classList.add('open');
-        lb.setAttribute('aria-hidden', 'false');
-        lbImg.style.transform = 'scale(1)';
-      });
-    });
-    let __zoomed = false;
-    lbImg.addEventListener('click', () => {
-      __zoomed = !__zoomed;
-      lbImg.style.transform = __zoomed ? 'scale(1.8)' : 'scale(1)';
-    });
-    function __closeLightbox(){
-      lb.classList.remove('open');
-      lb.setAttribute('aria-hidden', 'true');
-      __zoomed = false;
-      lbImg.style.transform = 'scale(1)';
-    }
-    lb.addEventListener('click', (e) => { if (e.target === lb) __closeLightbox(); });
-    lb.querySelector('.close').addEventListener('click', __closeLightbox);
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lb.classList.contains('open')) __closeLightbox(); });
-  }
 })();
 </script>
 
-<div class="lightbox" id="lightbox" aria-hidden="true">
+<!-- Lightbox (Re-usable for slides if needed) -->
+<div class="lightbox" id="lightbox" aria-hidden="true" style="display:none">
   <button class="close" aria-label="Закрыть">Закрыть</button>
   <img id="lightbox-img" alt="Просмотр изображения"/>
   <div class="zoom-tip">Нажмите для увеличения/уменьшения</div>
