@@ -342,6 +342,80 @@ section { padding: 32px 0; }
   .contact-row{ justify-content:center; gap:12px; }
 }
 </style>
+
+<style id="video-section-style">
+#video-section { padding: 32px 0; }
+.video-card {
+  background: var(--card,#fff);
+  border: 1px solid var(--line, rgba(0,0,0,.08));
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-description {
+  font-size: 0.95rem;
+  color: var(--text-secondary,#555);
+}
+</style>
+
+
+
+<style id="video-section-2col" >
+#video-section { padding: 32px 0; }
+
+#video-section .video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: 18px;             /* скругления как у карточек */
+  overflow: hidden;
+  border: 1px solid var(--line, rgba(0,0,0,.08));
+  box-shadow: var(--shadow);
+}
+
+#video-section .video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+</style>
+
+
+
+<style id="uniform-section-spacing">
+section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+@media (max-width: 768px) {
+  section {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}
+</style>
+
 </head>
 <body>
 <header>
@@ -474,6 +548,29 @@ section { padding: 32px 0; }
         </div>
       </div>
     </section>
+
+
+<section id="video-section">
+  <div class="container"><h2>Видео</h2></div>
+  <div class="ref-block">
+    <div class="ref-text">
+      <span>PR</span>
+      <h3>Сюжет федерального канала</h3>
+      <hr/>
+      <p>Съёмка федерального канала о новом бренде <strong>SKINCOUTURE</strong>.
+      Рассказывает руководитель и создатель бренда Столина Л.А.</p>
+      <a href="https://rutube.ru/video/beef9e3c3d6c9a4d441089684d3274a0/?r=wd" target="_blank" rel="noopener">Смотреть на Rutube</a>
+    </div>
+    <div class="video-embed" style="flex:1 1 520px; min-width:300px;">
+      <iframe
+        src="https://rutube.ru/play/embed/beef9e3c3d6c9a4d441089684d3274a0"
+        allowfullscreen
+        title="Видео о бренде SKINCOUTURE"></iframe>
+    </div>
+  </div>
+</section>
+
+
 
     <section id="sec-events">
       <div class="container"><h2>Мероприятия и конференции</h2></div>
