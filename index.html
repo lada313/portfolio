@@ -306,19 +306,19 @@
           <div class="swiper-wrapper">
             <!-- Перевёл слайды на <img>, чтобы исключить проблемы с background-image и регистром -->
             <div class="swiper-slide">
-              <img class="bg-img" src="assets/U0A0795.jpg" alt="Встреча" loading="lazy"/>
+              <img class="bg-img" src="./_U0A0795.jpg" alt="Встреча" loading="lazy"/>
               <div class="inner"><h4>Встреча</h4><p>Конференция с партнёрами из США: программа, логистика, продакшн.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
             </div>
             <div class="swiper-slide">
-              <img class="bg-img" src="assets/U0A0245.jpg" alt="Бьюти‑завтрак" loading="lazy"/>
+              <img class="bg-img" src="./_U0A0245.jpg" alt="Бьюти‑завтрак" loading="lazy"/>
               <div class="inner"><h4>Бьюти‑завтрак</h4><p>Камерное мероприятие для лидов и экспертов.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
             </div>
             <div class="swiper-slide">
-              <img class="bg-img" src="assets/U0A0383.jpg" alt="INTERCHARM" loading="lazy"/>
+              <img class="bg-img" src="./_U0A0383.jpg" alt="INTERCHARM" loading="lazy"/>
               <div class="inner"><h4>INTERCHARM</h4><p>Участие с собственным стендом и программой мастер‑классов.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
             </div>
             <div class="swiper-slide">
-              <img class="bg-img" src="assets/U0A0739.jpg" alt="INTERCHARM" loading="lazy"/>
+              <img class="bg-img" src="./_U0A0739.jpg" alt="INTERCHARM" loading="lazy"/>
               <div class="inner"><h4>INTERCHARM</h4><p>Участие с собственным стендом и программой мастер‑классов.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
             </div>
           </div>
@@ -418,6 +418,67 @@
   makeSwiper('.events-swiper');
   makeSwiper('.skin-swiper');
 })();
+
+  // ---------- Lightbox behaviour for carousel slides ----------
+  // When a slide is clicked, extract the image URL (from <img> or background-image)
+  // and display it in the lightbox overlay. Clicking outside the image or on
+  // the close button will hide the lightbox. This works on both desktop
+  // and mobile devices.
+  (function(){
+    const lightbox     = document.getElementById('lightbox');
+    const lightboxImg  = document.getElementById('lightbox-img');
+    const closeBtn     = lightbox.querySelector('.close');
+
+    // Helper to open the lightbox with a given image source
+    function openLightbox(src){
+      if (!src) return;
+      lightboxImg.src = src;
+      lightbox.style.display = 'flex';
+      lightbox.setAttribute('aria-hidden','false');
+    }
+
+    // Helper to close and reset the lightbox
+    function closeLightbox(){
+      lightbox.style.display = 'none';
+      lightbox.setAttribute('aria-hidden','true');
+      lightboxImg.src = '';
+    }
+
+    // Attach click listeners to all slides in all swipers
+    document.querySelectorAll('.swiper .swiper-slide').forEach(slide => {
+      slide.addEventListener('click', function(e){
+        // Ignore clicks on links or buttons inside the slide
+        if (e.target.closest('a')) return;
+        let src = '';
+        // If the slide contains an <img> element with class 'bg-img', use its src
+        const imgEl = slide.querySelector('img.bg-img');
+        if (imgEl && imgEl.src) {
+          src = imgEl.src;
+        } else {
+          // Otherwise, parse the inline background-image style of the slide
+          const bgStyle = getComputedStyle(slide).backgroundImage;
+          if (bgStyle && bgStyle !== 'none') {
+            const match = bgStyle.match(/url\(["']?(.*?)["']?\)/);
+            if (match && match[1]) {
+              src = match[1];
+            }
+          }
+        }
+        openLightbox(src);
+      });
+    });
+
+    // Close button
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeLightbox);
+    }
+    // Clicking outside the image closes the lightbox
+    lightbox.addEventListener('click', function(e){
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+  })();
 </script>
 
 <!-- Lightbox (Re-usable for slides if needed) -->
