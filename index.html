@@ -26,7 +26,7 @@
       --shadow:0 10px 30px rgba(13,27,42,.08);
     }
     *{box-sizing:border-box}
-    html,body{height:100%; overflow-x:hidden}
+    html,body{overflow-x:hidden}
     body{margin:0;font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:var(--bg);color:var(--text)}
     a{color:var(--accent)}
     .container{max-width:1140px;margin:0 auto;padding:0 20px;width:100%}
@@ -194,7 +194,7 @@
     }
 
     /* Фоновые светлые синие "пятна" */
-    .bg-anim{position:absolute;inset:-20vh -10vw -20vh -10vw;z-index:-1;overflow:hidden;pointer-events:none}
+    .bg-anim{position:absolute;inset:-20vh -10vw 0 -10vw;z-index:-1;overflow:hidden;pointer-events:none}
     .blob{position:absolute;width:46vmax;height:46vmax;border-radius:50%;filter:blur(70px);opacity:.25;mix-blend-mode:multiply}
     .blob.a{background:radial-gradient(circle at 30% 30%, #a9c8ff, transparent 60%);left:-10vmax;top:-8vmax;animation:floatA 18s ease-in-out infinite alternate}
     .blob.b{background:radial-gradient(circle at 70% 40%, #cfe0ff, transparent 60%);right:-8vmax;top:10vmax;animation:floatB 22s ease-in-out infinite alternate}
