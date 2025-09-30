@@ -267,6 +267,70 @@ section:hover > .container > h2::after,
 section:hover > h2::after{ transform:scaleX(1) }
 </style>
 
+<style>
+/* --- Smooth Swiper Transition --- */
+.swiper-wrapper { transition-timing-function: ease-in-out !important; }
+</style>
+<style>
+/* --- Reduced Section Padding --- */
+section { padding: 40px 0; }
+.experience-section { padding: 40px 0; }
+</style>
+<style>
+/* --- Reduced Section Padding v2 --- */
+section { padding: 32px 0; }
+.experience-section { padding: 32px 0; }
+</style>
+<style>
+/* --- Carousel Smooth Dimming --- */
+.swiper-slide { position: relative; }
+.swiper-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.18), rgba(0,0,0,0.18));
+  opacity: 0; /* active slide = 0 by default */
+  transition: opacity .6s ease; /* smooth fade */
+  pointer-events: none;
+}
+.swiper-slide:not(.swiper-slide-active)::before {
+  opacity: .45; /* dim non-active slides */
+}
+/* also smooth images/box-shadows if used */
+.swiper-slide, .swiper-slide img { transition: box-shadow .6s ease, filter .6s ease, transform .6s ease; }
+</style>
+<style>
+/* --- Why Section Mobile Buttons Fix --- */
+#why .actions{display:flex;gap:12px;flex-wrap:wrap}
+#why .actions .btn,#why .actions .btn-ghost{min-width:180px}
+@media (max-width: 560px){
+  #why .actions{flex-direction:column;align-items:stretch}
+  #why .actions .btn,#why .actions .btn-ghost{width:100%}
+}
+</style>
+<style>
+/* --- Contacts Horizontal Round Icons --- */
+<style>
+/* --- Contacts Horizontal Round Icons --- */
+.contacts-section{padding:32px 0}
+.contact-row{
+  display:flex; gap:14px; align-items:center; justify-content:flex-start;
+  margin-top:14px; flex-wrap:wrap;
+}
+.contact-round{
+  width:56px; height:56px; border-radius:50%;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:#454545; color:#fff; text-decoration:none;
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
+  transition:transform .2s ease, box-shadow .3s ease, background .2s ease;
+}
+.contact-round:hover{ transform:translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.26); background:#3b3b3b; }
+.contact-round svg{ width:22px; height:22px; fill:currentColor; }
+.sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+@media (max-width:560px){
+  .contact-row{ justify-content:center; gap:12px; }
+}
+</style>
 </head>
 <body>
 <header>
@@ -508,12 +572,39 @@ section:hover > h2::after{ transform:scaleX(1) }
     </div>
   </section>
 
-<section id="contacts">
-    <div class="container">
-      <h2>Контакты</h2>
-      <p>Телефон: <a href="tel:+79269273334">+7 (926) 927‑33‑34</a><br>E‑mail: <a href="mailto:sao313@mail.ru">sao313@mail.ru</a><br>Telegram: <a href="https://t.me/ladazhile">@ladazhile</a></p>
+
+
+
+<section id="contacts" class="contacts-section">
+  <div class="container">
+    <h2>Контакты</h2>
+    <div class="contact-row" role="navigation" aria-label="Контакты">
+      <a class="contact-round" href="tel:+79269273334" title="Звонок">
+        <svg viewBox="0 0 24 24" aria-hidden="true"></svg>
+        <span class="sr-only">Звонок</span>
+      </a>
+      <a class="contact-round" href="https://api.whatsapp.com/send/?phone=79269273334" target="_blank" rel="noopener" title="WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"></svg>
+        <span class="sr-only">WhatsApp</span>
+      </a>
+      <a class="contact-round" href="https://t.me/ladazhile" target="_blank" rel="noopener" title="Telegram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"></svg>
+        <span class="sr-only">Telegram</span>
+      </a>
+      <a class="contact-round" href="mailto:sao313@mail.ru" title="Почта">
+        <svg viewBox="0 0 24 24" aria-hidden="true"></svg>
+        <span class="sr-only">Почта</span>
+      </a>
+      <a class="contact-round" href="https://max.ru/u/f9LHodD0cOJab2AgBDUS43SJMrVGV0ZheyxhbUwUgC_CdbUZk1ohPlij0ZQ" target="_blank" rel="noopener" title="MAX">
+        <svg viewBox="0 0 24 24" aria-hidden="true"></svg>
+        <span class="sr-only">MAX</span>
+      </a>
     </div>
-  </section>
+  </div>
+</section>
+
+
+
 </main>
 
 <footer style="padding:30px 0;color:#5a6b85;text-align:center;border-top:1px solid var(--line);background:#fff">© Жилокова Лада · Project & Communications Manager</footer>
@@ -543,19 +634,30 @@ section:hover > h2::after{ transform:scaleX(1) }
   // Swipers
   function makeSwiper(selector){
     return new Swiper(selector, {
+  fadeEffect: { crossFade: true },
+  speed: 900,
       effect: 'coverflow',
       grabCursor: true,
       centeredSlides: true, // фикс выезда за край на моб
-      coverflowEffect: { rotate: 0, stretch: 0, depth: 100, modifier: 3, slideShadows: false },
-      keyboard: { enabled: true },
+      coverflowEffect: {
+  speed: 900, rotate: 0, stretch: 0, depth: 100, modifier: 3, slideShadows: false },
+      keyboard: {
+  speed: 900, enabled: true },
       loop: false,
-      pagination: { el: selector + ' .swiper-pagination', clickable: true },
+      pagination: {
+  speed: 900, el: selector + ' .swiper-pagination', clickable: true },
       breakpoints: {
-        0:    { slidesPerView: 1, centeredSlides: true, spaceBetween: 12 },
-        480:  { slidesPerView: 1, centeredSlides: true, spaceBetween: 14 },
-        640:  { slidesPerView: 1.2, centeredSlides: true, spaceBetween: 18 },
-        900:  { slidesPerView: 2, centeredSlides: true, spaceBetween: 18 },
-        1200: { slidesPerView: 'auto', centeredSlides: true, spaceBetween: 20 }
+  speed: 900,
+        0:    {
+  speed: 900, slidesPerView: 1, centeredSlides: true, spaceBetween: 12 },
+        480:  {
+  speed: 900, slidesPerView: 1, centeredSlides: true, spaceBetween: 14 },
+        640:  {
+  speed: 900, slidesPerView: 1.2, centeredSlides: true, spaceBetween: 18 },
+        900:  {
+  speed: 900, slidesPerView: 2, centeredSlides: true, spaceBetween: 18 },
+        1200: {
+  speed: 900, slidesPerView: 'auto', centeredSlides: true, spaceBetween: 20 }
       }
     });
   }
@@ -660,15 +762,22 @@ window.addEventListener('DOMContentLoaded', () => {
     var el = document.querySelector(selector);
     if(!el || el.swiper) return;
     return new Swiper(selector, {
+  fadeEffect: { crossFade: true },
+  speed: 900,
       effect: 'coverflow',
       grabCursor: true,
       centeredSlides: true,
-      coverflowEffect: { rotate: 0, stretch: 0, depth: 100, modifier: 3, slideShadows: true },
-      keyboard: { enabled: true },
-      mousewheel: { thresholdDelta: 70 },
+      coverflowEffect: {
+  speed: 900, rotate: 0, stretch: 0, depth: 100, modifier: 3, slideShadows: true },
+      keyboard: {
+  speed: 900, enabled: true },
+      mousewheel: {
+  speed: 900, thresholdDelta: 70 },
       loop: true,
       initialSlide: 1,
-      on: { init: function(sw){ sw.slideToLoop(1, 0, false); } },
+      on: {
+  speed: 900, init: function(sw){
+  speed: 900, sw.slideToLoop(1, 0, false); } },
       pagination: { el: selector + ' .swiper-pagination', clickable: true },
       breakpoints: { 640:{ slidesPerView: 2 }, 768:{ slidesPerView: 1 }, 1024:{ slidesPerView: 2 }, 1560:{ slidesPerView: 3 } }
     });
