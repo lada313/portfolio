@@ -416,6 +416,35 @@ section {
 }
 </style>
 
+
+
+<style id="media-press-tall-slides">
+/* --- Media & Press: слайды в пропорции 2:3 --- */
+.media-swiper .swiper-slide{
+  aspect-ratio: 2 / 3;
+  width: clamp(280px, 40vw, 420px) !important;
+  border-radius: 16px;
+}
+.media-swiper .slide-bg{
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+  background-color: #dfe9ff;
+}
+.media-swiper .inner{
+  padding: 70px 16px 18px;
+  background: linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,0) 65%) !important;
+}
+@media (max-width: 640px){
+  .media-swiper .swiper-slide{
+    width: 90vw !important;
+    aspect-ratio: 2 / 3;
+  }
+  .media-swiper .inner{ padding: 60px 12px 16px; }
+}
+</style>
+
+
 </head>
 <body>
 <header>
