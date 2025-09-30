@@ -1,17 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Жилокова Лада — Portfolio · Light + Blue (Final)</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Swiper (for carousels) -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css"/>
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Жилокова Лада — Portfolio</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Swiper (for carousels) -->
+<link href="https://unpkg.com/swiper@9/swiper-bundle.min.css" rel="stylesheet">
+<style>
     :root{
       --bg:#f6f9ff;
       --panel:#ffffff;
@@ -250,7 +248,6 @@
 .timeline-content p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--text-secondary, #555); }
 
 </style>
-
 <style id="extra-anim-merge">
 /* === Reveal-on-scroll (from blue portfolio, adapted) === */
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease}
@@ -266,7 +263,6 @@ h2::after{transform-origin:left;transform:scaleX(.6);opacity:.85;transition:tran
 section:hover > .container > h2::after,
 section:hover > h2::after{ transform:scaleX(1) }
 </style>
-
 <style>
 /* --- Smooth Swiper Transition --- */
 .swiper-wrapper { transition-timing-function: ease-in-out !important; }
@@ -310,7 +306,6 @@ section { padding: 32px 0; }
   #why .actions .btn,#why .actions .btn-ghost{width:100%}
 }
 </style>
-
 <style>
 /* --- Contacts Horizontal Round Icons --- */
 .contacts-section{padding:32px 0}
@@ -344,7 +339,6 @@ section { padding: 32px 0; }
   .contact-row{ justify-content:center; gap:12px; }
 }
 </style>
-
 <style id="video-section-style">
 #video-section { padding: 32px 0; }
 .video-card {
@@ -377,10 +371,7 @@ section { padding: 32px 0; }
   color: var(--text-secondary,#555);
 }
 </style>
-
-
-
-<style id="video-section-2col" >
+<style id="video-section-2col">
 #video-section { padding: 32px 0; }
 
 #video-section .video-embed {
@@ -402,9 +393,6 @@ section { padding: 32px 0; }
   border: 0;
 }
 </style>
-
-
-
 <style id="uniform-section-spacing">
 section {
   padding-top: 48px;
@@ -417,9 +405,6 @@ section {
   }
 }
 </style>
-
-
-
 <style id="media-press-tall-slides">
 /* --- Media & Press: слайды в пропорции 2:3 --- */
 .media-swiper .swiper-slide{
@@ -445,322 +430,287 @@ section {
   .media-swiper .inner{ padding: 60px 12px 16px; }
 }
 </style>
-
-
-</head>
+</link></head>
 <body>
 <header>
-  <div class="container nav">
-    <button class="burger" aria-expanded="false" aria-controls="primary-nav" aria-label="Открыть меню">
-      <i></i>
-    </button>
-    <div class="brand">Лада Жилокова</div>
-    <nav id="primary-nav" class="primary">
-      <a href="#about">Обо мне</a>
-      <a href="#projects">Проекты</a>
-      <a href="#skills">Навыки</a>
-      <a href="#experience">Опыт</a>
-      <a href="#contacts">Контакты</a>
-    </nav>
-  </div>
+<div class="container nav">
+<button aria-controls="primary-nav" aria-expanded="false" aria-label="Открыть меню" class="burger">
+<i></i>
+</button>
+<div class="brand">Лада Жилокова</div>
+<nav class="primary" id="primary-nav">
+<a href="#about">Обо мне</a>
+<a href="#projects">Проекты</a>
+<a href="#skills">Навыки</a>
+<a href="#experience">Опыт</a>
+<a href="#contacts">Контакты</a>
+</nav>
+</div>
 </header>
-
 <main>
-  <!-- Hero -->
-  <section class="hero" id="about">
-    <div class="bg-anim" aria-hidden="true">
-      <span class="blob a"></span><span class="blob b"></span><span class="blob c"></span>
-    </div>
-    <div class="container hero-grid">
-      <div>
-        <span class="tag">Project & Communications Manager</span>
-        <h1>Разработка и проведение PR-кампаний и digital‑проектов.</h1>
-        <p>Встречи и конференции с иностранными партнёрами, бьюти‑завтраки, PR‑публикации, верстка лендингов и рекламных материалов. Запускаю комплексные коммуникации, которые помогают бренду расти.</p>
-        <div class="actions">
-          <a class="btn" href="#projects">Смотреть проекты</a>
-          <a class="btn-ghost" href="#contacts">Связаться</a>
-        </div>
-      </div>
-      <div class="portrait">
-        <img src="assets/433662ab-a0ed-43b7-b9b0-3689f9321005.png" alt="Лада Жилокова" loading="lazy" onload="this.closest('.portrait').classList.add('has-image')"/>
-        <div class="placeholder-graphic">Визуал</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats -->
-  <section>
-    <div class="container">
-      <h2>Ключевые результаты</h2>
-      <div class="stats">
-        <div class="stat"><b>50+</b><span>мероприятий: конференции, бьюти‑завтраки, презентации</span></div>
-        <div class="stat"><b>100+</b><span>новых клиентов B2B/B2C привлечено</span></div>
-        <div class="stat"><b>3+</b><span>региона дистрибуции бренда SKINCOUTURE: Россия, СНГ, Европа</span></div>
-        <div class="stat"><b>Digital</b><span>лендинги, чат‑боты, визуал для рекламы, публикации в СМИ</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects">
-    <div class="container"><h2>Проекты и кейсы</h2></div>
-
-    <section id="sec-visual">
-      <div class="container"><h2>Лендинги и рекламный визуал</h2></div>
-      <div class="ref-block">
-        <div class="ref-text">
-          <span>Проекты</span>
-          <h3>Landing pages & Visual</h3>
-          <hr/>
-          <p>Разработка визуальной концепции, верстка, подготовка макетов для веба и печати. <br><span style="opacity:.9;font-weight:600;">Результат:</span> повышение вовлечённости аудитории, упрощение восприятия информации, использование материалов на внутренних и внешних мероприятиях.</p>
-        </div>
-        <div class="swiper visual-swiper">
-          <div class="swiper-wrapper">
-            <!-- Замените URL в background-image на свои изображения -->
-            <div class="swiper-slide slide-bg" style="background-image:url('pagespromo/671shots_so.png')">
-              <div class="inner">
-                <h4></h4>
-                <p>Партнеская страница</p>
-                <a class="cta" href="https://skincouture.ru/lp/skincouture/nashi-partnery" target="_blank">Перейти</a>
-              </div>
-            </div>
-            <div class="swiper-slide slide-bg" style="background-image:url('pagespromo/783shots_so.png')">
-              <div class="inner"><h4></h4><p>Продуктовый лендинг</p><a class="cta" href="https://skincouture.ru/lp/tykvennyi-piling-skincouture" target="_blank">Перейти</a></div>
-            </div>
-            <div class="swiper-slide slide-bg" style="background-image:url('pagespromo/455shots_so.png')">
-              <div class="inner"><h4></h4><p>Квиз</p><a class="cta" href="https://skincouture.ru/lp/test-spf-kviz" target="_blank">Перейти</a></div>
-            </div>            
-            <div class="swiper-slide slide-bg" style="background-image:url('pagespromo/696shots_so.png')">
-              <div class="inner"><h4></h4><p>Промостраница</p><a class="cta" href="#" target="_blank">Перейти</a></div>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
+<!-- Hero -->
+<section class="hero" id="about">
+<div aria-hidden="true" class="bg-anim">
+<span class="blob a"></span><span class="blob b"></span><span class="blob c"></span>
+</div>
+<div class="container hero-grid">
+<div>
+<span class="tag">Project &amp; Communications Manager</span>
+<h1>Разработка и проведение PR-кампаний и digital‑проектов.</h1>
+<p>Встречи и конференции с иностранными партнёрами, бьюти‑завтраки, PR‑публикации, верстка лендингов и рекламных материалов. Запускаю комплексные коммуникации, которые помогают бренду расти.</p>
+<div class="actions">
+<a class="btn" href="#projects">Смотреть проекты</a>
+<a class="btn-ghost" href="#contacts">Связаться</a>
+</div>
+</div>
+<div class="portrait">
+<img alt="Лада Жилокова" loading="lazy" onload="this.closest('.portrait').classList.add('has-image')" src="assets/433662ab-a0ed-43b7-b9b0-3689f9321005.png"/>
+<div class="placeholder-graphic">Визуал</div>
+</div>
+</div>
 </section>
-        <section id="sec-events2">
-      <div class="container"><h2>Мероприятия и конференции</h2></div>
-      <div class="ref-block">
-        <div class="ref-text">
-          <span>Tech</span>
-          <h3>Digital & Expo Projects</h3>
-          <hr/>
-          <p>Разработка функционала бота, сотрудничество с разработчиками, создание дизайна стенда и контента для видеосъёмок. <span style="opacity:.9;font-weight:600;"><br>Результат:</span> эффективный инструмент для общения с аудиторией, заметное присутствие компании на выставке, привлечение новой аудитории.</p>
-        </div>
-        <div class="swiper events-swiper">
-          <div class="swiper-wrapper">
-            <!-- Используйте изображения из папки assets; избегаем префикса './' так как index.html находится в корне проекта -->
-            <div class="swiper-slide">
-              <img class="bg-img" src="assets/U0A0795.jpg" alt="Встреча" loading="lazy" />
-              <div class="inner"><h4>Встреча</h4><p>Конференция с партнёрами из США: программа, логистика, продакшн.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
-            </div>
-            <div class="swiper-slide">
-              <img class="bg-img" src="assets/U0A0245.jpg" alt="Бьюти‑завтрак" loading="lazy" />
-              <div class="inner"><h4>Бьюти‑завтрак</h4><p>Камерное мероприятие для лидов и экспертов.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
-            </div>
-            <div class="swiper-slide">
-              <img class="bg-img" src="assets/U0A0383.jpg" alt="INTERCHARM" loading="lazy" />
-              <div class="inner"><h4>INTERCHARM</h4><p>Участие с собственным стендом и программой мастер‑классов.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
-            </div>
-            <div class="swiper-slide">
-              <img class="bg-img" src="assets/U0A0739.jpg" alt="INTERCHARM" loading="lazy" />
-              <div class="inner"><h4>INTERCHARM</h4><p>Участие с собственным стендом и программой мастер‑классов.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section>
+<!-- Stats -->
+<section>
+<div class="container">
+<h2>Ключевые результаты</h2>
+<div class="stats">
+<div class="stat"><b>50+</b><span>мероприятий: конференции, бьюти‑завтраки, презентации</span></div>
+<div class="stat"><b>100+</b><span>новых клиентов B2B/B2C привлечено</span></div>
+<div class="stat"><b>3+</b><span>региона дистрибуции бренда SKINCOUTURE: Россия, СНГ, Европа</span></div>
+<div class="stat"><b>Digital</b><span>лендинги, чат‑боты, визуал для рекламы, публикации в СМИ</span></div>
+</div>
+</div>
+</section>
+<!-- Projects -->
+<section id="projects">
+<div class="container"><h2>Проекты и кейсы</h2></div>
 
 
-    <section id="sec-media">
-      <div class="container"><h2>Публикации в СМИ</h2></div>
-      <div class="ref-block">
-        <div class="ref-text">
-          <span>PR</span>
-          <h3>Media & Press</h3>
-          <hr/>
-          <p>Организация и координация мероприятия: выбор площадки, взаимодействие с подрядчиками, оформление, подготовка раздаточных материалов, сопровождение гостей. <span style="opacity:.9;font-weight:600;"><br>Результат:</span> успешное проведение и высокие оценки участников, рост вовлечённости партнёров и клиентов.</p>
-        </div>
-        <div class="swiper media-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide slide-bg" style="background-image:url('smi/2022_Hello_-_7Billie_Eillish_1296x копия.jpg')"><div class="inner"><h4>Статья / релиз</h4><p>Отраслевое медиа: пресс‑релиз о запуске. Охват — N, CTR — X%.</p><a class="cta" href="https://пример-ссылки-на-статью.ru" target="_blank">читать</a></div></div>
-            <div class="swiper-slide slide-bg" style="background-image:url('smi/акне lenta копия.jpg')"><div class="inner"><h4>Интервью эксперта</h4><p>Позиционирование бренда, переходы на лендинг.</p><a class="cta" href="https://пример-ссылки-на-интервью.ru" target="_blank">читать</a></div></div>
-            <div class="swiper-slide slide-bg" style="background-image:url('smi/маска проблменая.jpg')"><div class="inner"><h4>Спецпроект</h4><p>Нативный материал с лидером мнений.</p><a class="cta" href="https://пример-ссылки-на-спецпроект.ru" target="_blank">смотреть</a></div></div>
-            <div class="swiper-slide slide-bg" style="background-image:url('smi/mmg массажный копия2.jpg')"><div class="inner"><h4>Спецпроект</h4><p>Нативный материал с лидером мнений.</p><a class="cta" href="https://пример-ссылки-на-спецпроект.ru" target="_blank">смотреть</a></div></div>
-            <div class="swiper-slide slide-bg" style="background-image:url('smi/инсайдер пилинг копия123.jpg')"><div class="inner"><h4>Спецпроект</h4><p>Нативный материал с лидером мнений.</p><a class="cta" href="https://пример-ссылки-на-спецпроект.ru" target="_blank">смотреть</a></div></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section>
 
 
-<section id="video-section">
-  <div class="container"><h2>Видео</h2></div>
-  <div class="ref-block">
-    <div class="ref-text">
-      <span>PR</span>
-      <h3>Сюжет МОСКВА24</h3>
-      <hr/>
-      <p>Съёмка федерального канала о новом бренде <strong>SKINCOUTURE</strong>.
+
+<section id="sec-visual">
+<div class="container"><h2>Лендинги и рекламный визуал</h2></div>
+<div class="ref-block">
+<div class="ref-text">
+<span>Проекты</span>
+<h3>Landing pages &amp; Visual</h3>
+<hr/>
+<p>Разработка визуальной концепции, верстка, подготовка макетов для веба и печати. <br/><span style="opacity:.9;font-weight:600;">Результат:</span> повышение вовлечённости аудитории, упрощение восприятия информации, использование материалов на внутренних и внешних мероприятиях.</p>
+</div>
+<div class="swiper visual-swiper">
+<div class="swiper-wrapper">
+<!-- Замените URL в background-image на свои изображения -->
+<div class="swiper-slide slide-bg" style="background-image:url('pagespromo/671shots_so.png')">
+<div class="inner">
+<h4></h4>
+<p>Партнеская страница</p>
+<a class="cta" href="https://skincouture.ru/lp/skincouture/nashi-partnery" target="_blank">Перейти</a>
+</div>
+</div>
+<div class="swiper-slide slide-bg" style="background-image:url('pagespromo/783shots_so.png')">
+<div class="inner"><h4></h4><p>Продуктовый лендинг</p><a class="cta" href="https://skincouture.ru/lp/tykvennyi-piling-skincouture" target="_blank">Перейти</a></div>
+</div>
+<div class="swiper-slide slide-bg" style="background-image:url('pagespromo/455shots_so.png')">
+<div class="inner"><h4></h4><p>Квиз</p><a class="cta" href="https://skincouture.ru/lp/test-spf-kviz" target="_blank">Перейти</a></div>
+</div>
+<div class="swiper-slide slide-bg" style="background-image:url('pagespromo/696shots_so.png')">
+<div class="inner"><h4></h4><p>Промостраница</p><a class="cta" href="#" target="_blank">Перейти</a></div>
+</div>
+</div>
+<div class="swiper-pagination"></div>
+</div>
+</div>
+</section><section id="sec-media">
+<div class="container"><h2>Публикации в СМИ</h2></div>
+<div class="ref-block">
+<div class="ref-text">
+<span>PR</span>
+<h3>Media &amp; Press</h3>
+<hr/>
+<p>Организация и координация мероприятия: выбор площадки, взаимодействие с подрядчиками, оформление, подготовка раздаточных материалов, сопровождение гостей. <span style="opacity:.9;font-weight:600;"><br/>Результат:</span> успешное проведение и высокие оценки участников, рост вовлечённости партнёров и клиентов.</p>
+</div>
+<div class="swiper media-swiper">
+<div class="swiper-wrapper">
+<div class="swiper-slide slide-bg" style="background-image:url('smi/2022_Hello_-_7Billie_Eillish_1296x копия.jpg')"><div class="inner"><h4>Статья / релиз</h4><p>Отраслевое медиа: пресс‑релиз о запуске. Охват — N, CTR — X%.</p><a class="cta" href="https://пример-ссылки-на-статью.ru" target="_blank">читать</a></div></div>
+<div class="swiper-slide slide-bg" style="background-image:url('smi/акне lenta копия.jpg')"><div class="inner"><h4>Интервью эксперта</h4><p>Позиционирование бренда, переходы на лендинг.</p><a class="cta" href="https://пример-ссылки-на-интервью.ru" target="_blank">читать</a></div></div>
+<div class="swiper-slide slide-bg" style="background-image:url('smi/маска проблменая.jpg')"><div class="inner"><h4>Спецпроект</h4><p>Нативный материал с лидером мнений.</p><a class="cta" href="https://пример-ссылки-на-спецпроект.ru" target="_blank">смотреть</a></div></div>
+<div class="swiper-slide slide-bg" style="background-image:url('smi/mmg массажный копия2.jpg')"><div class="inner"><h4>Спецпроект</h4><p>Нативный материал с лидером мнений.</p><a class="cta" href="https://пример-ссылки-на-спецпроект.ru" target="_blank">смотреть</a></div></div>
+<div class="swiper-slide slide-bg" style="background-image:url('smi/инсайдер пилинг копия123.jpg')"><div class="inner"><h4>Спецпроект</h4><p>Нативный материал с лидером мнений.</p><a class="cta" href="https://пример-ссылки-на-спецпроект.ru" target="_blank">смотреть</a></div></div>
+</div>
+<div class="swiper-pagination"></div>
+</div>
+</div>
+</section><section id="video-section">
+<div class="container"><h2>Видео</h2></div>
+<div class="ref-block">
+<div class="ref-text">
+<span>PR</span>
+<h3>Сюжет МОСКВА24</h3>
+<hr/>
+<p>Съёмка федерального канала о новом бренде <strong>SKINCOUTURE</strong>.
       Рассказывает руководитель и создатель бренда Столина Л.А.</p>
-      <a href="https://rutube.ru/video/beef9e3c3d6c9a4d441089684d3274a0/?r=wd" target="_blank" rel="noopener">Смотреть на Rutube</a>
-    </div>
-    <div class="video-embed" style="flex:1 1 520px; min-width:300px;">
-      <iframe
-        src="https://rutube.ru/play/embed/beef9e3c3d6c9a4d441089684d3274a0"
-        allowfullscreen
-        title="Видео о бренде SKINCOUTURE"></iframe>
-    </div>
-  </div>
+<a href="https://rutube.ru/video/beef9e3c3d6c9a4d441089684d3274a0/?r=wd" rel="noopener" target="_blank">Смотреть на Rutube</a>
+</div>
+<div class="video-embed" style="flex:1 1 520px; min-width:300px;">
+<iframe allowfullscreen="" src="https://rutube.ru/play/embed/beef9e3c3d6c9a4d441089684d3274a0" title="Видео о бренде SKINCOUTURE"></iframe>
+</div>
+</div>
+</section><section id="sec-events">
+<div class="container"><h2>Мероприятия и конференции</h2></div>
+<div class="ref-block">
+<div class="ref-text">
+<span>Events</span>
+<h3>Conferences &amp; Breakfasts</h3>
+<hr/>
+<p>Разработка функционала бота, сотрудничество с разработчиками, создание дизайна стенда и контента для видеосъёмок. <span style="opacity:.9;font-weight:600;"><br/>Результат:</span> эффективный инструмент для общения с аудиторией, заметное присутствие компании на выставке, привлечение новой аудитории.</p>
+</div>
+<div class="swiper events-swiper">
+<div class="swiper-wrapper">
+<!-- Используйте изображения из папки assets; избегаем префикса './' так как index.html находится в корне проекта -->
+<div class="swiper-slide">
+<img alt="Встреча" class="bg-img" loading="lazy" src="assets/U0A0795.jpg"/>
+<div class="inner"><h4>Встреча</h4><p>Конференция с партнёрами из США: программа, логистика, продакшн.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
+</div>
+<div class="swiper-slide">
+<img alt="Бьюти‑завтрак" class="bg-img" loading="lazy" src="assets/U0A0245.jpg"/>
+<div class="inner"><h4>Бьюти‑завтрак</h4><p>Камерное мероприятие для лидов и экспертов.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
+</div>
+<div class="swiper-slide">
+<img alt="INTERCHARM" class="bg-img" loading="lazy" src="assets/U0A0383.jpg"/>
+<div class="inner"><h4>INTERCHARM</h4><p>Участие с собственным стендом и программой мастер‑классов.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
+</div>
+<div class="swiper-slide">
+<img alt="INTERCHARM" class="bg-img" loading="lazy" src="assets/U0A0739.jpg"/>
+<div class="inner"><h4>INTERCHARM</h4><p>Участие с собственным стендом и программой мастер‑классов.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
+</div>
+</div>
+<div class="swiper-pagination"></div>
+</div>
+</div>
+</section><section id="sec-events2">
+<div class="container"><h2>Мероприятия и конференции</h2></div>
+<div class="ref-block">
+<div class="ref-text">
+<span>Tech</span>
+<h3>Digital &amp; Expo Projects</h3>
+<hr/>
+<p>Разработка функционала бота, сотрудничество с разработчиками, создание дизайна стенда и контента для видеосъёмок. <span style="opacity:.9;font-weight:600;"><br/>Результат:</span> эффективный инструмент для общения с аудиторией, заметное присутствие компании на выставке, привлечение новой аудитории.</p>
+</div>
+<div class="swiper events-swiper">
+<div class="swiper-wrapper">
+<!-- Используйте изображения из папки assets; избегаем префикса './' так как index.html находится в корне проекта -->
+<div class="swiper-slide">
+<img alt="Встреча" class="bg-img" loading="lazy" src="assets/U0A0795.jpg"/>
+<div class="inner"><h4>Встреча</h4><p>Конференция с партнёрами из США: программа, логистика, продакшн.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
+</div>
+<div class="swiper-slide">
+<img alt="Бьюти‑завтрак" class="bg-img" loading="lazy" src="assets/U0A0245.jpg"/>
+<div class="inner"><h4>Бьюти‑завтрак</h4><p>Камерное мероприятие для лидов и экспертов.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
+</div>
+<div class="swiper-slide">
+<img alt="INTERCHARM" class="bg-img" loading="lazy" src="assets/U0A0383.jpg"/>
+<div class="inner"><h4>INTERCHARM</h4><p>Участие с собственным стендом и программой мастер‑классов.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
+</div>
+<div class="swiper-slide">
+<img alt="INTERCHARM" class="bg-img" loading="lazy" src="assets/U0A0739.jpg"/>
+<div class="inner"><h4>INTERCHARM</h4><p>Участие с собственным стендом и программой мастер‑классов.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
+</div>
+</div>
+<div class="swiper-pagination"></div>
+</div>
+</div>
+</section></section>
+<!-- Skills -->
+<section id="skills">
+<div class="container">
+<h2>Навыки</h2>
+<div class="stats" style="grid-template-columns:repeat(3,1fr)">
+<div class="stat"><b>Мероприятия &amp; PR</b><span>Организация встреч, конференций, бьюти‑завтраков, участие в выставках (INTERCHARM). Работа со СМИ.</span></div>
+<div class="stat"><b>Digital</b><span>Лендинги и промостраницы, рекламные визуалы, чат‑боты, SEO и аналитика кампаний.</span></div>
+<div class="stat"><b>Инструменты</b><span>Photoshop, Figma, Illustrator, MS Office, 1С, Bitrix24, HTML/CSS, Python (базовый).</span></div>
+</div>
+</div>
 </section>
-
-
-
-    <section id="sec-events">
-      <div class="container"><h2>Мероприятия и конференции</h2></div>
-      <div class="ref-block">
-        <div class="ref-text">
-          <span>Events</span>
-          <h3>Conferences & Breakfasts</h3>
-          <hr/>
-          <p>Разработка функционала бота, сотрудничество с разработчиками, создание дизайна стенда и контента для видеосъёмок. <span style="opacity:.9;font-weight:600;"><br>Результат:</span> эффективный инструмент для общения с аудиторией, заметное присутствие компании на выставке, привлечение новой аудитории.</p>
-        </div>
-        <div class="swiper events-swiper">
-          <div class="swiper-wrapper">
-            <!-- Используйте изображения из папки assets; избегаем префикса './' так как index.html находится в корне проекта -->
-            <div class="swiper-slide">
-              <img class="bg-img" src="assets/U0A0795.jpg" alt="Встреча" loading="lazy" />
-              <div class="inner"><h4>Встреча</h4><p>Конференция с партнёрами из США: программа, логистика, продакшн.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
-            </div>
-            <div class="swiper-slide">
-              <img class="bg-img" src="assets/U0A0245.jpg" alt="Бьюти‑завтрак" loading="lazy" />
-              <div class="inner"><h4>Бьюти‑завтрак</h4><p>Камерное мероприятие для лидов и экспертов.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
-            </div>
-            <div class="swiper-slide">
-              <img class="bg-img" src="assets/U0A0383.jpg" alt="INTERCHARM" loading="lazy" />
-              <div class="inner"><h4>INTERCHARM</h4><p>Участие с собственным стендом и программой мастер‑классов.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
-            </div>
-            <div class="swiper-slide">
-              <img class="bg-img" src="assets/U0A0739.jpg" alt="INTERCHARM" loading="lazy" />
-              <div class="inner"><h4>INTERCHARM</h4><p>Участие с собственным стендом и программой мастер‑классов.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section>
-</section>
-
-  <!-- Skills -->
-  <section id="skills">
-    <div class="container">
-      <h2>Навыки</h2>
-      <div class="stats" style="grid-template-columns:repeat(3,1fr)">
-        <div class="stat"><b>Мероприятия & PR</b><span>Организация встреч, конференций, бьюти‑завтраков, участие в выставках (INTERCHARM). Работа со СМИ.</span></div>
-        <div class="stat"><b>Digital</b><span>Лендинги и промостраницы, рекламные визуалы, чат‑боты, SEO и аналитика кампаний.</span></div>
-        <div class="stat"><b>Инструменты</b><span>Photoshop, Figma, Illustrator, MS Office, 1С, Bitrix24, HTML/CSS, Python (базовый).</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contacts -->
-  
-  
+<!-- Contacts -->
 <!-- Experience -->
-<section id="experience" class="experience-section">
-  <div class="container">
-    <h2>Опыт работы</h2>
-    <div class="timeline">
-      
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content">
-          <h3>ООО «АстраДермика» (SKINCOUTURE)</h3>
-          <span class="position">Менеджер по проектам — 2018 — наст. время</span>
-          <p>Организация маркетинговых мероприятий, встречи с иностранными партнёрами, PR, публикации в СМИ, digital-проекты (лендинги, визуал, чат-боты).</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content">
-          <h3>DermaQuest Russia</h3>
-          <span class="position">Менеджер по работе с клиентами — 2016 — 2018</span>
-          <p>Развитие клиентской базы, сопровождение заказов, работа с претензиями, отчётность и аналитика продаж.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content">
-          <h3>«Музыкальный журнал»</h3>
-          <span class="position">Шеф-редактор интернет-издания — 2015 — 2016</span>
-          <p>Редактура и публикация статей, пресс-релизы, участие в пресс-мероприятиях и интервью.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<section class="experience-section" id="experience">
+<div class="container">
+<h2>Опыт работы</h2>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-marker"></div>
+<div class="timeline-content">
+<h3>ООО «АстраДермика» (SKINCOUTURE)</h3>
+<span class="position">Менеджер по проектам — 2018 — наст. время</span>
+<p>Организация маркетинговых мероприятий, встречи с иностранными партнёрами, PR, публикации в СМИ, digital-проекты (лендинги, визуал, чат-боты).</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker"></div>
+<div class="timeline-content">
+<h3>DermaQuest Russia</h3>
+<span class="position">Менеджер по работе с клиентами — 2016 — 2018</span>
+<p>Развитие клиентской базы, сопровождение заказов, работа с претензиями, отчётность и аналитика продаж.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker"></div>
+<div class="timeline-content">
+<h3>«Музыкальный журнал»</h3>
+<span class="position">Шеф-редактор интернет-издания — 2015 — 2016</span>
+<p>Редактура и публикация статей, пресс-релизы, участие в пресс-мероприятиях и интервью.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-
-
-  <!-- Why me -->
-  <section id="why">
-    <div class="container">
-      <h2>Почему я</h2>
-      <div class="stat" style="padding:20px">
-        <ul style="margin:0 0 16px 18px; line-height:1.6">
-          <li>Опыт организации мероприятий разного масштаба: от бьюти‑завтраков до международных конференций.</li>
-          <li>Сильный PR‑бэкграунд: публикации, работа с агентствами, СМИ и блогерами.</li>
-          <li>Digital‑экспертиза: лендинги, рекламный визуал, чат‑боты, SEO.</li>
-        </ul>
-        <div class="actions">
-          <a class="btn" href="assets/CvZhilokovaLV.pdf" download>Скачать CV (PDF)</a>
-          <a class="btn-ghost" href="mailto:sao313@mail.ru">Написать</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-
-<section id="contacts" class="contacts-section">
-  <div class="container">
-    <h2>Контакты</h2>
-    <div class="contact-row" role="navigation" aria-label="Контакты">
-      <a class="contact-round" href="tel:+79269273334" title="Звонок">
-  <img src="lab/mob.png" alt="" width="34" height="34">
-        <span class="sr-only">Звонок</span>
-      </a>
-      <a class="contact-round" href="https://api.whatsapp.com/send/?phone=79269273334" target="_blank" rel="noopener" title="WhatsApp">
-  <img src="lab/wa.png" alt="" width="34" height="34">
-        <span class="sr-only">WhatsApp</span>
-      </a>
-      <a class="contact-round" href="https://t.me/ladazhile" target="_blank" rel="noopener" title="Telegram">
-  <img src="lab/tele.png" alt="" width="34" height="34">
-        <span class="sr-only">Telegram</span>
-      </a>
-      <a class="contact-round" href="mailto:sao313@mail.ru" title="Почта">
-  <img src="lab/letter_14348015.png" alt="" width="34" height="34">
-        <span class="sr-only">Почта</span>
-      </a>
-      <a class="contact-round" href="https://max.ru/u/f9LHodD0cOJab2AgBDUS43SJMrVGV0ZheyxhbUwUgC_CdbUZk1ohPlij0ZQ" target="_blank" rel="noopener" title="MAX">
-  <img src="lab/max.png" alt="" width="34" height="34">
-        <span class="sr-only">MAX</span>
-      </a>
-    </div>
-  </div>
+<!-- Why me -->
+<section id="why">
+<div class="container">
+<h2>Почему я</h2>
+<div class="stat" style="padding:20px">
+<ul style="margin:0 0 16px 18px; line-height:1.6">
+<li>Опыт организации мероприятий разного масштаба: от бьюти‑завтраков до международных конференций.</li>
+<li>Сильный PR‑бэкграунд: публикации, работа с агентствами, СМИ и блогерами.</li>
+<li>Digital‑экспертиза: лендинги, рекламный визуал, чат‑боты, SEO.</li>
+</ul>
+<div class="actions">
+<a class="btn" download="" href="assets/CvZhilokovaLV.pdf">Скачать CV (PDF)</a>
+<a class="btn-ghost" href="mailto:sao313@mail.ru">Написать</a>
+</div>
+</div>
+</div>
 </section>
-
-
-
+<section class="contacts-section" id="contacts">
+<div class="container">
+<h2>Контакты</h2>
+<div aria-label="Контакты" class="contact-row" role="navigation">
+<a class="contact-round" href="tel:+79269273334" title="Звонок">
+<img alt="" height="34" src="lab/mob.png" width="34"/>
+<span class="sr-only">Звонок</span>
+</a>
+<a class="contact-round" href="https://api.whatsapp.com/send/?phone=79269273334" rel="noopener" target="_blank" title="WhatsApp">
+<img alt="" height="34" src="lab/wa.png" width="34"/>
+<span class="sr-only">WhatsApp</span>
+</a>
+<a class="contact-round" href="https://t.me/ladazhile" rel="noopener" target="_blank" title="Telegram">
+<img alt="" height="34" src="lab/tele.png" width="34"/>
+<span class="sr-only">Telegram</span>
+</a>
+<a class="contact-round" href="mailto:sao313@mail.ru" title="Почта">
+<img alt="" height="34" src="lab/letter_14348015.png" width="34"/>
+<span class="sr-only">Почта</span>
+</a>
+<a class="contact-round" href="https://max.ru/u/f9LHodD0cOJab2AgBDUS43SJMrVGV0ZheyxhbUwUgC_CdbUZk1ohPlij0ZQ" rel="noopener" target="_blank" title="MAX">
+<img alt="" height="34" src="lab/max.png" width="34"/>
+<span class="sr-only">MAX</span>
+</a>
+</div>
+</div>
+</section>
 </main>
-
-<footer style="padding:30px 0;color:#5a6b85;text-align:center;border-top:1px solid var(--line);background:#fff">© Жилокова Лада · Project & Communications Manager</footer>
-
+<footer style="padding:30px 0;color:#5a6b85;text-align:center;border-top:1px solid var(--line);background:#fff">© Жилокова Лада · Project &amp; Communications Manager</footer>
 <!-- Swiper JS -->
 <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
 <script>
@@ -819,7 +769,6 @@ section {
   makeSwiper('.skin-swiper');
 })();
 </script>
-
 <!-- Lightbox behaviour for slides -->
 <script>
 // Автоматически открывать изображение в полноэкранном режиме при клике на любой слайд.
@@ -898,16 +847,13 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-
 <!-- Lightbox (Re-usable for slides if needed) -->
-<div class="lightbox" id="lightbox" aria-hidden="true" style="display:none">
-  <!-- Кнопка закрытия: используем символ × вместо текста -->
-  <button class="close" aria-label="Закрыть">×</button>
-  <img id="lightbox-img" alt="Просмотр изображения"/>
-  <!-- Подсказку для зума убрали по желанию пользователя -->
-</div>
-
-
+<div aria-hidden="true" class="lightbox" id="lightbox" style="display:none">
+<!-- Кнопка закрытия: используем символ × вместо текста -->
+<button aria-label="Закрыть" class="close">×</button>
+<img alt="Просмотр изображения" id="lightbox-img">
+<!-- Подсказку для зума убрали по желанию пользователя -->
+</img></div>
 <script>
 (function(){
   function makeSwiper(selector){
@@ -948,8 +894,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 })();
 </script>
-
-
 <script id="extra-anim-js-merge">
 (function(){
   // Add .reveal to key blocks
@@ -988,6 +932,5 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 })();
 </script>
-
 </body>
 </html>
