@@ -125,11 +125,36 @@
       border-radius:16px;overflow:hidden;box-shadow:0 12px 26px rgba(0,0,0,.12);position:relative;background:#dfe9ff;
     }
     /* затемнение (оверлей) для читабельности текста на любых картинках */
-    .swiper-slide .inner{display:none;opacity:0;position:absolute;left:0;right:0;bottom:0;background:linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,0) 60%);width:100%;padding:18px 0 72px;z-index:2;transition:opacity .25s ease}
+    .swiper-slide .inner{
+          display:none;
+          opacity:0;
+          position:absolute;
+          left:0;
+          right:0;
+          bottom:0;
+          /* усиливаем затемнение и поднимаем верхнюю границу градиента */
+          background:linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,0) 65%);
+          width:100%;
+          /* делаем нижний отступ минимальным (15px), а верхний – большим, чтобы текст и кнопка опустились к нижней кромке */
+          padding:70px 0 15px;
+          z-index:2;
+          transition:opacity .25s ease;
+        }
     .swiper-slide-active .inner{display:block;opacity:1}
     .swiper-slide h4{color:#fff;font-weight:700;font-size:1.1rem;margin:0 0 .4rem 1rem;text-transform:uppercase;letter-spacing:.5px}
     .swiper-slide p{color:#eaf2ff;margin:0 1rem 0 1rem;line-height:1.5;font-size:.9rem;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
-    .swiper-slide a.cta{margin:12px 1rem 0 1rem;padding:8px 16px;border-radius:999px;background:#fff;color:var(--accent);text-decoration:none;font-weight:700;font-size:.9rem;display:inline-block}
+    .swiper-slide a.cta{
+      margin:12px 1rem 0 1rem;
+      padding:8px 16px;
+      border-radius:999px;
+      /* кнопка: делаем более прозрачной для меньшего акцента */
+      background:rgba(255,255,255,0.6);
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:700;
+      font-size:.9rem;
+      display:inline-block;
+    }
     .swiper-3d .swiper-slide-shadow-left, .swiper-3d .swiper-slide-shadow-right{background-image:none}
     .slide-bg{background-size:cover;background-position:center; background-repeat:no-repeat; position:relative}
     .slide-bg::before{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(7, 18, 36, .35), rgba(7,18,36,0) 60%)}
@@ -145,7 +170,12 @@
       .swiper{min-width:0;width:100%;overflow:visible}
       .swiper-wrapper{padding:0 0 12px}
       .swiper-slide{width:90vw !important;height:auto !important;aspect-ratio:1/1}
-      .swiper-slide .inner{padding:16px 12px 60px}
+      /* На мобильных устройствах увеличиваем затемнение и отступы, чтобы текст был ниже и читался лучше */
+      .swiper-slide .inner{
+        /* для мобильных: увеличиваем верхний отступ, практически убираем нижний (15px) — текст и кнопка прижимаются к нижнему краю */
+        padding:60px 12px 15px;
+        background:linear-gradient(to top, rgba(0,0,0,.9), rgba(0,0,0,0) 65%);
+      }
       .swiper-slide h4,
       .swiper-slide p,
       .swiper-slide a.cta{margin-left:0;margin-right:0}
@@ -158,6 +188,9 @@
       /* === Skills: single column on mobile, prevent overflow === */
       #skills .stats{grid-template-columns:1fr !important}
       #skills .stat{min-width:0}
+
+      /* Скрываем фотографию героя на мобильных устройствах */
+      .hero .portrait{display:none}
     }
 
     /* Фоновые светлые синие "пятна" */
@@ -304,21 +337,21 @@
         </div>
         <div class="swiper events-swiper">
           <div class="swiper-wrapper">
-            <!-- Перевёл слайды на <img>, чтобы исключить проблемы с background-image и регистром -->
+            <!-- Используйте изображения из папки assets; избегаем префикса './' так как index.html находится в корне проекта -->
             <div class="swiper-slide">
-              <img class="bg-img" src="assets/U0A0795.jpg" alt="Встреча" loading="lazy"/>
+              <img class="bg-img" src="assets/_U0A0795.jpg" alt="Встреча" loading="lazy" />
               <div class="inner"><h4>Встреча</h4><p>Конференция с партнёрами из США: программа, логистика, продакшн.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
             </div>
             <div class="swiper-slide">
-              <img class="bg-img" src="assets/U0A0245.jpg" alt="Бьюти‑завтрак" loading="lazy"/>
+              <img class="bg-img" src="assets/_U0A0245.jpg" alt="Бьюти‑завтрак" loading="lazy" />
               <div class="inner"><h4>Бьюти‑завтрак</h4><p>Камерное мероприятие для лидов и экспертов.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
             </div>
             <div class="swiper-slide">
-              <img class="bg-img" src="assets/U0A0383.jpg" alt="INTERCHARM" loading="lazy"/>
+              <img class="bg-img" src="assets/_U0A0383.jpg" alt="INTERCHARM" loading="lazy" />
               <div class="inner"><h4>INTERCHARM</h4><p>Участие с собственным стендом и программой мастер‑классов.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
             </div>
             <div class="swiper-slide">
-              <img class="bg-img" src="assets/U0A0739.jpg" alt="INTERCHARM" loading="lazy"/>
+              <img class="bg-img" src="assets/_U0A0739.jpg" alt="INTERCHARM" loading="lazy" />
               <div class="inner"><h4>INTERCHARM</h4><p>Участие с собственным стендом и программой мастер‑классов.</p><a class="cta" href="#" target="_blank">смотреть</a></div>
             </div>
           </div>
@@ -418,74 +451,93 @@
   makeSwiper('.events-swiper');
   makeSwiper('.skin-swiper');
 })();
+</script>
 
-  // ---------- Lightbox behaviour for carousel slides ----------
-  // When a slide is clicked, extract the image URL (from <img> or background-image)
-  // and display it in the lightbox overlay. Clicking outside the image or on
-  // the close button will hide the lightbox. This works on both desktop
-  // and mobile devices.
-  (function(){
-    const lightbox     = document.getElementById('lightbox');
-    const lightboxImg  = document.getElementById('lightbox-img');
-    const closeBtn     = lightbox.querySelector('.close');
+<!-- Lightbox behaviour for slides -->
+<script>
+// Автоматически открывать изображение в полноэкранном режиме при клике на любой слайд.
+// Код обернут в DOMContentLoaded для корректной инициализации после создания всех элементов в DOM.
+window.addEventListener('DOMContentLoaded', () => {
+  // Берём элементы lightbox
+  const lightbox    = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn    = lightbox ? lightbox.querySelector('.close') : null;
+  const zoomTip     = lightbox ? lightbox.querySelector('.zoom-tip') : null;
+  let zoomed = false;
 
-    // Helper to open the lightbox with a given image source
-    function openLightbox(src){
-      if (!src) return;
-      lightboxImg.src = src;
-      lightbox.style.display = 'flex';
-      lightbox.setAttribute('aria-hidden','false');
-    }
+  // Функция для открытия lightbox
+  function openLightbox(src){
+    if(!lightbox || !lightboxImg) return;
+    lightboxImg.src = src;
+    lightbox.style.display = 'flex';
+    lightbox.classList.add('open');
+    // Сбросить зум
+    zoomed = false;
+    lightboxImg.style.transform = 'scale(1)';
+    if(zoomTip) zoomTip.style.display = 'block';
+  }
 
-    // Helper to close and reset the lightbox
-    function closeLightbox(){
-      lightbox.style.display = 'none';
-      lightbox.setAttribute('aria-hidden','true');
-      lightboxImg.src = '';
-    }
+  // Функция для закрытия lightbox
+  function closeLightbox(){
+    if(!lightbox) return;
+    lightbox.classList.remove('open');
+    setTimeout(() => { lightbox.style.display = 'none'; }, 200);
+  }
 
-    // Attach click listeners to all slides in all swipers
-    document.querySelectorAll('.swiper .swiper-slide').forEach(slide => {
-      slide.addEventListener('click', function(e){
-        // Ignore clicks on links or buttons inside the slide
-        if (e.target.closest('a')) return;
-        let src = '';
-        // If the slide contains an <img> element with class 'bg-img', use its src
-        const imgEl = slide.querySelector('img.bg-img');
-        if (imgEl && imgEl.src) {
-          src = imgEl.src;
-        } else {
-          // Otherwise, parse the inline background-image style of the slide
-          const bgStyle = getComputedStyle(slide).backgroundImage;
-          if (bgStyle && bgStyle !== 'none') {
-            const match = bgStyle.match(/url\(["']?(.*?)["']?\)/);
-            if (match && match[1]) {
-              src = match[1];
-            }
-          }
-        }
-        openLightbox(src);
-      });
+  // Слушатель закрытия по кнопке
+  if(closeBtn){
+    closeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeLightbox();
     });
+  }
 
-    // Close button
-    if (closeBtn) {
-      closeBtn.addEventListener('click', closeLightbox);
-    }
-    // Clicking outside the image closes the lightbox
-    lightbox.addEventListener('click', function(e){
-      if (e.target === lightbox) {
-        closeLightbox();
-      }
+  // Слушатель закрытия по клику на тёмный фон
+  if(lightbox){
+    lightbox.addEventListener('click', (e) => {
+      if(e.target === lightbox) closeLightbox();
     });
-  })();
+  }
+
+  // Слушатель масштабирования по клику на изображение
+  if(lightboxImg){
+    lightboxImg.addEventListener('click', (e) => {
+      // отменяем всплытие, чтобы не закрывать lightbox
+      e.stopPropagation();
+      zoomed = !zoomed;
+      lightboxImg.style.transform = zoomed ? 'scale(1.6)' : 'scale(1)';
+      if(zoomTip) zoomTip.style.display = zoomed ? 'none' : 'block';
+    });
+  }
+
+  // Слушатель кликов по слайдам карусели
+  document.addEventListener('click', (e) => {
+    const slide = e.target.closest('.swiper-slide');
+    if(!slide) return;
+    // Если клик по ссылке внутри слайда — не открываем lightbox
+    if(e.target.closest('a')) return;
+    let src = '';
+    const imgEl = slide.querySelector('img');
+    if(imgEl && imgEl.src) {
+      src = imgEl.src;
+    } else {
+      // Получаем URL из background-image
+      const style = window.getComputedStyle(slide);
+      const bgImg = style.backgroundImage || '';
+      const match = bgImg.match(/url\(["']?(.*?)["']?\)/);
+      if(match && match[1]) src = match[1];
+    }
+    if(src) openLightbox(src);
+  });
+});
 </script>
 
 <!-- Lightbox (Re-usable for slides if needed) -->
 <div class="lightbox" id="lightbox" aria-hidden="true" style="display:none">
-  <button class="close" aria-label="Закрыть">Закрыть</button>
+  <!-- Кнопка закрытия: используем символ × вместо текста -->
+  <button class="close" aria-label="Закрыть">×</button>
   <img id="lightbox-img" alt="Просмотр изображения"/>
-  <div class="zoom-tip">Нажмите для увеличения/уменьшения</div>
+  <!-- Подсказку для зума убрали по желанию пользователя -->
 </div>
 
 </body>
