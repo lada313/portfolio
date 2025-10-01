@@ -248,23 +248,6 @@
 .timeline-content p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--text-secondary, #555); }
 
 </style>
-
-<!-- Disable blurred background filter on iOS devices to prevent dark overlay -->
-<style id="ios-fix">
-  /* Safari/iOS-specific fix: remove blur and scaling on video backgrounds */
-  @supports (-webkit-touch-callout: none) {
-    .video-slide .video-bg video,
-    .video-slide .video-bg img {
-      /* Remove blur and brightness adjustments */
-      filter: none !important;
-      /* Remove transform scaling */
-      transform: none !important;
-      /* Reset hints since no animation here */
-      will-change: auto !important;
-      backface-visibility: visible !important;
-    }
-  }
-</style>
 <style id="extra-anim-merge">
 /* === Reveal-on-scroll (from blue portfolio, adapted) === */
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease}
@@ -490,22 +473,7 @@ section {
 .video-slide .video-bg video{
   width:100%; height:100%; object-fit:cover;
   filter:blur(24px) brightness(.75);
-  /* Add translateZ(0) to force GPU acceleration in Safari and prevent dark overlay */
-  transform:scale(1.2) translateZ(0);
-  /* Hint Safari to allocate resources for upcoming animations and prevent dark overlays */
-  will-change: transform, filter;
-  /* Prevent flickering of 3D layers in Safari */
-  backface-visibility: hidden;
-}
-
-/* Apply the same blurred and scaled styling to static background images in video slides */
-.video-slide .video-bg img{
-  width:100%; height:100%; object-fit:cover;
-  filter:blur(24px) brightness(.75);
-  /* scale up the blurred image slightly */
-  transform:scale(1.2) translateZ(0);
-  will-change: transform, filter;
-  backface-visibility: hidden;
+  transform:scale(1.2);
 }
 .video-slide .video-foreground{
   position:absolute; z-index:2;
@@ -796,10 +764,9 @@ section {
 </div>
 <div class="swiper-slide video-slide">
   <div class="video-bg">
-    <!-- Use a static poster image for the blurred background instead of a video to avoid glitches on iOS -->
-    <img src="assets/268164.jpeg" alt="poster" class="bg-img" loading="lazy" />
+    <video src="assets/VID_20250930_184827_338.mp4" autoplay muted loop playsinline></video>
   </div>
-  <video class="video-foreground" src="assets/VID_20250930_184827_338.mp4" autoplay muted loop playsinline controls preload="metadata" poster="assets/268164.jpeg"></video>
+  <video class="video-foreground" src="assets/VID_20250930_184827_338.mp4" autoplay muted loop playsinline controls preload="metadata" poster="assets/268164.jpeg" autoplay muted loop playsinline preload="metadata"></video>
   <div class="inner">
     <h4></h4>
     <p>Съёмка контента для соц-сетей</p>
