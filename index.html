@@ -475,8 +475,10 @@ section {
   transform:scale(1.2);
 }
 .video-slide .video-foreground{
-  position:relative; z-index:2;
-  display:block; margin:0 auto;
+  position:absolute; z-index:2;
+  inset:0;
+  margin:auto;
+  width:auto; height:auto;
   max-height:100%; max-width:100%;
   object-fit:contain;
   background:#000;
@@ -771,7 +773,7 @@ section {
   <div class="video-bg">
     <video src="assets/VID_20250930_184827_338.mp4" autoplay muted loop playsinline></video>
   </div>
-  <video class="video-foreground" src="assets/VID_20250930_184827_338.mp4" controls preload="none" playsinline poster="assets/268164.jpeg"></video>
+  <video class="video-foreground" src="assets/VID_20250930_184827_338.mp4" autoplay muted loop playsinline controls preload="metadata" poster="assets/268164.jpeg"></video>
   <div class="inner">
     <h4></h4>
     <p>Съёмка контента для соц-сетей</p>
