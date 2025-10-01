@@ -466,32 +466,29 @@ section {
 
 
 
-
 <style id="blurred-video-slide">
-/* --- Vertical video with static blurred poster background (iOS-safe) --- */
+/* --- Vertical video inside slide with blurred background --- */
 .video-slide{ position:relative; overflow:hidden; border-radius:16px; }
-.video-slide .video-bg{ position:absolute; inset:0; overflow:hidden; z-index:1; }
-.video-bg-img{
-  position:absolute; inset:0;
-  width:100%; height:100%;
-  object-fit:cover;
-  transform:scale(1.2);
+.video-slide .video-bg{ position:absolute; inset:0; overflow:hidden; z-index:1; background:#000; }
+.video-slide .video-bg video{
+  width:100%; height:100%; object-fit:cover;
   filter:blur(24px) brightness(.75);
+  transform:scale(1.2);
 }
-.video-foreground{
-  position:absolute; inset:0; margin:auto; z-index:2;
-  width:auto; height:auto; max-width:100%; max-height:100%;
+.video-slide .video-foreground{
+  position:absolute; z-index:2;
+  top:50%; left:50%; transform:translate(-50%,-50%);
+  width:auto; height:auto; max-height:100%; max-width:100%;
   object-fit:contain;
   background:transparent;
   border-radius:inherit;
 }
 .video-slide .inner{ position:relative; z-index:3; }
-/* pagination always above overlays */
+/* поднять пагинацию */
 .tech-swiper .swiper-pagination,
 .events-swiper .swiper-pagination,
 .visual-swiper .swiper-pagination{ z-index:10; bottom:10px!important; }
 </style>
-
 
 
 
