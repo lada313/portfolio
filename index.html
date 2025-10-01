@@ -466,22 +466,17 @@ section {
 
 
 
+
 <style id="blurred-video-slide">
-/* --- Вертикальное видео с безопасным размытым фоном --- */
+/* --- Vertical video with static blurred poster background (iOS-safe) --- */
 .video-slide{ position:relative; overflow:hidden; border-radius:16px; }
 .video-slide .video-bg{ position:absolute; inset:0; overflow:hidden; z-index:1; }
-.video-bg-video, .video-bg-img {
+.video-bg-img{
   position:absolute; inset:0;
   width:100%; height:100%;
   object-fit:cover;
   transform:scale(1.2);
   filter:blur(24px) brightness(.75);
-}
-.video-bg-img { display:none; }
-/* iOS Safari — отключаем фоновое видео, включаем постер */
-@supports (-webkit-touch-callout: none) {
-  .video-bg-video { display:none; }
-  .video-bg-img { display:block; }
 }
 .video-foreground{
   position:absolute; inset:0; margin:auto; z-index:2;
@@ -491,11 +486,12 @@ section {
   border-radius:inherit;
 }
 .video-slide .inner{ position:relative; z-index:3; }
-/* точки пагинации */
+/* pagination always above overlays */
 .tech-swiper .swiper-pagination,
 .events-swiper .swiper-pagination,
 .visual-swiper .swiper-pagination{ z-index:10; bottom:10px!important; }
 </style>
+
 
 
 
@@ -773,7 +769,7 @@ section {
   <div class="video-bg">
     <video src="assets/VID_20250930_184827_338.mp4" autoplay muted loop playsinline></video>
   </div>
-  <video class="video-foreground" src="assets/VID_20250930_184827_338.mp4" autoplay muted loop playsinline controls preload="metadata" poster="assets/268164.jpeg"></video>
+  <video class="video-foreground" src="assets/VID_20250930_184827_338.mp4" autoplay muted loop playsinline controls preload="metadata" poster="assets/268164.jpeg" autoplay muted loop playsinline preload="metadata"></video>
   <div class="inner">
     <h4></h4>
     <p>Съёмка контента для соц-сетей</p>
