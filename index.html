@@ -474,10 +474,6 @@ section {
   width:100%; height:100%; object-fit:cover;
   filter:blur(24px) brightness(.75);
   transform:scale(1.2);
-  /* Hint Safari to allocate resources for upcoming animations and prevent dark overlays */
-  will-change: transform, filter;
-  /* Prevent flickering of 3D layers in Safari */
-  backface-visibility: hidden;
 }
 .video-slide .video-foreground{
   position:absolute; z-index:2;
