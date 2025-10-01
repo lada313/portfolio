@@ -248,6 +248,22 @@
 .timeline-content p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--text-secondary, #555); }
 
 </style>
+
+<!-- Disable blurred background filter on iOS devices to prevent dark overlay -->
+<style id="ios-fix">
+  /* Safari/iOS-specific fix: remove blur and scaling on video backgrounds */
+  @supports (-webkit-touch-callout: none) {
+    .video-slide .video-bg video {
+      /* Remove blur and brightness adjustments */
+      filter: none !important;
+      /* Remove transform scaling */
+      transform: none !important;
+      /* Reset hints since no animation here */
+      will-change: auto !important;
+      backface-visibility: visible !important;
+    }
+  }
+</style>
 <style id="extra-anim-merge">
 /* === Reveal-on-scroll (from blue portfolio, adapted) === */
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease}
